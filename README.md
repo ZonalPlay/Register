@@ -4,4 +4,4 @@ Register for your server MCPE/MCBE
 
 
 # Commands
-/cp -change password
+/cp - change password
