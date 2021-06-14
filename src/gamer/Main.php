@@ -35,19 +35,21 @@ use pocketmine\event\player\PlayerInteractEvent;
 			if(!isset($this->users[strtolower($event->getPlayer()->getName())])) 
 				$event->setCancelled(true);
 		}
-public function onDrop(PlayerDropItemEvent $e){
+		
+		public function onDrop(PlayerDropItemEvent $e){
 			if(!isset($this->users[strtolower($e->getPlayer()->getName())])) 
 				$e->setCancelled(true);
 		}
-public function onBreak(BlockBreakEvent $e){
+		
+		public function onBreak(BlockBreakEvent $e){
 			if(!isset($this->users[strtolower($e->getPlayer()->getName())])) 
 				$e->setCancelled(true);
-}
-
-public function onTap(	PlayerInteractEvent $e){
+		}
+		public function onTap(PlayerInteractEvent $e){
 			if(!isset($this->users[strtolower($e->getPlayer()->getName())])) 
 				$e->setCancelled(true);
-}
+		}
+		
 		public function onPlayerJoin(PlayerJoinEvent $event) {
 			$player = $event->getPlayer();
 			$sql = $this->db->prepare("SELECT * FROM `users` WHERE `nickname` = :nickname");
@@ -137,9 +139,7 @@ public function onTap(	PlayerInteractEvent $e){
 					$event->setCancelled(true);
 					$player->sendMessage($login);
 				}
-			
-		}}
-
+			}
+		}
 	}
-
-?>
+}
